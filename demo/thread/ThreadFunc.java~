@@ -1,0 +1,12 @@
+public class ThreadFunc extends Thread {
+    public ThreadFunc( String param ) {
+	this.param = param;
+    }
+    public void run( ) {
+	for ( int i = 0; i < 5; i++ ) {
+	    Thread.sleep( 2000 );
+	    System.out.println( "I'm a slave: " + param );
+	}
+    }
+    String param;
+}

@@ -1,0 +1,73 @@
+# Generated automatically from Makefile.in by configure.
+# File         : Makefile
+# Author       : Sung-Hoon Ko
+# Created      : Thu Apr  9 12:22:15 1998
+# Revision     : ver 1.1
+# Updated      : $Date: 2002/12/17 02:15:05 $
+# Copyright: Northeast Parallel Architectures Center at Syracuse University 1998
+
+
+SHELL=/bin/sh
+
+srcdir      = .
+top_srcdir  = ../..
+
+mpiJavaClasses = ../../lib/classes
+VPATH = .:${srcdir}
+
+VERSION = 1.00
+
+CLASS_PATH = -classpath .:${mpiJavaClasses}:$(JAVA_PATH)/lib/classes.zip:$(JAVA_PATH)/classes
+
+
+CC = mpicc
+CCLIBKEY = 
+JAVA_PATH = /usr/java/jdk1.5.0_14/
+JAVA_C = ${JAVA_PATH}/bin/javac
+
+EXECS = PingPongBench
+
+
+
+.SUFFIXES:
+.SUFFIXES: .c .o .java .class
+
+.c.o:
+	$(CC) -c $*.c
+
+.java.class:
+	$(JAVA_C) $(CLASS_PATH) $*.java
+
+
+
+all: $(EXECS) check
+
+PingPongJava = PingPong.class Clock.class Table.class
+PingPongC    = mpi_single.o     log2.o    table.o
+ 
+
+$(EXECS): $(PingPongJava) $(PingPongC)
+	$(CC) -o mpi_single $(PingPongC) $(CCLIBKEY)
+ 
+
+check: 
+	./RunBench
+
+
+
+clean:
+	rm -f *.class core PI* *.jig *.o
+
+distclean:
+	rm -f *.rec 
+
+record:
+
+compdep:
+
+compare:
+
+test: 
+
+
+

@@ -1,0 +1,24 @@
+This file contains any messages produced by compilers while
+running configure, to aid debugging if configure makes a mistake.
+
+configure:590: checking host system type
+configure:611: checking target system type
+configure:629: checking build system type
+configure:671: checking how to run the C preprocessor
+configure:692: cc -E  conftest.c >/dev/null 2>conftest.out
+configure:751: checking for ANSI C header files
+configure:764: cc -E  conftest.c >/dev/null 2>conftest.out
+configure:831: cc -o conftest    conftest.c  1>&5
+configure: In function 'main':
+configure:826: warning: incompatible implicit declaration of built-in function 'exit'
+configure:856: checking for sys/wait.h that is POSIX.1 compatible
+configure:877: cc -c   conftest.c 1>&5
+configure:901: checking for ranlib
+configure:1038: checking MPI package
+configure:1076: checking for mpicc
+configure:1106: checking whether mpicc configured
+configure:1127: checking MPI include dir
+configure:1142: checking MPI lib dir
+configure:1546: checking LD package
+configure:1656: checking whether Java garbage collector supports pinning
+configure:1727: checking whether MPI_Unpack allows inbuf to be smaller that outbuf
